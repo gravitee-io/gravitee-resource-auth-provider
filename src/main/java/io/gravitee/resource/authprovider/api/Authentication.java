@@ -15,8 +15,7 @@
  */
 package io.gravitee.resource.authprovider.api;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.Map;
 
 /**
  * @author David BRASSELY (david.brassely at graviteesource.com)
@@ -24,47 +23,23 @@ import java.util.List;
  */
 public class Authentication {
 
-    private String username;
+    private final String username;
 
-    private String password;
-
-    private List<String> authorities;
+    private Map<String, Object> attributes;
 
     public Authentication(String username) {
-        this(username, null, Collections.emptyList());
-    }
-
-    public Authentication(String username, String password) {
-        this(username, password, Collections.emptyList());
-    }
-
-    public Authentication(String username, String password, List<String> authorities) {
         this.username = username;
-        this.password = password;
-        this.authorities = authorities;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public Map<String, Object> getAttributes() {
+        return attributes;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public List<String> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(List<String> authorities) {
-        this.authorities = authorities;
+    public void setAttributes(Map<String, Object> attributes) {
+        this.attributes = attributes;
     }
 }
