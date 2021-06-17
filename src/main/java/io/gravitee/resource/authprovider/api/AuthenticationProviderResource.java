@@ -15,6 +15,7 @@
  */
 package io.gravitee.resource.authprovider.api;
 
+import io.gravitee.gateway.api.ExecutionContext;
 import io.gravitee.gateway.api.handler.Handler;
 import io.gravitee.resource.api.AbstractConfigurableResource;
 import io.gravitee.resource.api.ResourceConfiguration;
@@ -25,5 +26,9 @@ import io.gravitee.resource.api.ResourceConfiguration;
  */
 public abstract class AuthenticationProviderResource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
 
-    public abstract void authenticate(String username, String password, Handler<Authentication> handler);
+    public void authenticate(String username, String password, Handler<Authentication> handler) {
+        authenticate(username, password, null, handler);
+    }
+
+    public abstract void authenticate(String username, String password, ExecutionContext context, Handler<Authentication> handler);
 }
