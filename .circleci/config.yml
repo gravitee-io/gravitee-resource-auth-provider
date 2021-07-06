@@ -280,10 +280,7 @@ workflows:
           # container_gun_image_name: 'openjdk'
           # container_gun_image_tag: '11.0.3-jdk-stretch'
           container_size: 'large'
-      - package_bundle:
-          requires:
-            - maven_n_git_release
-
+          
   standalone_nexus_staging:
     # ---
     # Running the nexus staging makes sense only when the
