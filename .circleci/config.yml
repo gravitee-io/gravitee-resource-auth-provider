@@ -38,7 +38,7 @@ jobs:
 
   package_bundle:
     docker:
-      - image: 'cimg/node:16.3.0'
+      - image: 'cimg/node:16.14.2'
     environment:
       SECRETS_FOLDER: '/tmp/gravit33bot/.secrets'
 
