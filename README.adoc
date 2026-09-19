@@ -10,3 +10,16 @@ image:https://f.hubspotusercontent40.net/hubfs/7600448/gravitee-github-button.jp
 == Description
 The resource auth provider API contains the interfaces to implement in order to create an auth provider plugin for Gravitee.io APIM. +
 An example can be found https://github.com/gravitee-io/gravitee-resource-auth-provider-http[here]
+
+== Compatibility matrix
+
+|===
+| Plugin version | APIM            | Java version
+
+| 2.x            | 4.9.x to latest | 21
+| 1.x            | 4.9.x to latest | 11
+|===
+
+The *Java version* column is the bytecode level of the latest release of each line, which sets the minimum runtime able to load the artifact.
+
+APIM pins the version it ships — 1.3.0 on every branch from 4.7 to master — and provides it through the gateway's `lib/`, so the 2.x bump is backported to the support branches rather than left to master alone.
